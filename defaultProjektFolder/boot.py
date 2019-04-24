@@ -1,5 +1,5 @@
 def connect():
-    import network
+    import network, ntptime
     import wlanscan
     from time import sleep_ms
 
@@ -40,6 +40,9 @@ def connect():
         print('Kein bekanntes Netzwerk gefunden')
     else:
         print('Network connected:', sta_if.ifconfig())
+	sleep_ms(500)
+        ntptime.settime()
+        sleep_ms(500)
 
 def no_debug():
     import esp
