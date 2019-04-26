@@ -36,12 +36,13 @@ class Weather:
         wetter = jdata['weather'][0]['description']
         icon = jdata['weather'][0]['icon']
         temp = round(jdata['main']['temp'] - 273.15, 2)
-        data = [str(round(wind['speed'], 0)), str(wind['deg']), wetter, temp, icon]
+        data = [wind['speed'], wind['deg'], wetter, temp, icon]
         return data
 
 class weatherStation:
     def __init__(self, api, ort):
         self.api = api
         self.ort = ort
-
-    pass
+        
+    def sendData(self):
+        pass
